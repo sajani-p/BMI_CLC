@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+/*Scroll bar Styling*/
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #E5E5E5;
+    line-height:0.6;
+}
+
+/*Title styling*/
+.title-container {
+    width: 100vw;
+    height: 100px;
+    background-color:#420264;
+}
+.title-container > .title , .cal {    
+    color: white;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-top: 90px;
+    font-weight:bold;
+    text-align: center;
+}
+.row{
+    padding-top: 40pt;
+    gap:0;
+}
+/* hieght weight styling */
+.details{
+    font-size: 20pt;
+    font-weight: bold;
+}
+.item{
+    background-color: #b0e2db;
+    border: 2px solid #008F7A;
+    border-radius: 30px;
+    height: 30pt;
+    width: 185pt;
+    text-align: center;
+    font-size: 12pt;
+    font-weight: 500;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+/* calculate BMI and RESET buttons styling */
+.button{
+    padding-top: 0;
+    height: 45px;
+    margin-bottom: 35px;
+    margin-top: 0;
+    text-align: center;
+}
+#btn, #btn-reset{
+    text-align:center;
+    height: 100%;
+    width: 60%;
+    border-radius: 20px;
+    border: none;
+    color: rgb(71, 71, 71);
+    font-size: 10pt;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: Montserrat;
+    background-color: #70DACC;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    outline: transparent;
+}
+#btn:not([disabled]):hover, #btn-reset:not([disabled]):hover{
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(33, 146, 238, 0.356), .125rem .125rem 1rem rgba(124, 243, 237, 0.5);
+}
+/* result styling */
+.result1{
+     text-align: center;
+     font-size: 18pt;
+     font-weight: bold;
+     color: #008F7A;
+}
+/*Footer styling*/
+.footer-container {
+    position: relative;
+    background-color: #420264; 
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+}
+.footer-container > h3 {
+    position: absolute;
+    width: max-content;
+    font-size: 16px;
+    font-weight: 500;
+    color: #e3e3e3;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 15px;
+}
+
+/* BMI range button */
+.popup .overlay {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.7);
+    z-index:1;
+    display:none;
+}
+.pop1{
+    text-align: center;
+    font-weight: bold;
+}
+.range-content{
+    font-weight: bold;
+}
+.quotes{
+    font-size: 15pt;
+    font-weight: bold;
+    font-style: italic;
+    color:rgb(236, 236, 236);
+}
+.popup .content {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background-image: radial-gradient(circle, #8649a6, #9058ae, #9a67b5, #a476bd, #ae85c4);
+    width:95%;
+    max-width:500px;
+    height:315px;
+    z-index:2;
+    text-align:left;
+    padding:20px;
+    border-radius: 10px;
+    box-sizing:border-box;
+    font-family:"Open Sans",sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.popup .close-btn {
+    cursor:pointer;
+    position:absolute;
+    right:20px;
+    top:20px;
+    width:30px;
+    height:30px;
+    background:#222;
+    color:#fff;
+    font-size:25px;
+    font-weight:600;
+    line-height:30px;
+    text-align:center;
+    border-radius:50%;
+}
+.popup.active .overlay {
+    display:block;
+}
+.popup.active .content {
+    transition:all 300ms ease-in-out;
+    transform:translate(-50%,-50%) scale(1);
+}
+.button2 {
+    position:relative;
+    padding:10px;
+    font-size:18px;
+    border-radius: 30px;
+    border:2px solid #015c4e;
+    color:rgb(254, 255, 255);
+    text-transform:uppercase;
+    font-weight:bold;
+    background:#008F7A;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+}
+.button2:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
